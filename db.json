@@ -1,0 +1,16 @@
+{
+  "orders": [
+    {
+      "orderId": "xxxx1111",
+      "productId": "000001",
+      "productName": "PRODUCT 01",
+      "quantity": 9999
+    },
+    {
+      "orderId": "xxxx2222",
+      "productName": "PRODUCT 02",
+      "productId": "000001",
+      "quantity": 8999
+    }
+  ]
+}
