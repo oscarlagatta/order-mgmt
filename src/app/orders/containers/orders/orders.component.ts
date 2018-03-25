@@ -1,25 +1,23 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { OrderItemModel } from "../../models/order-item.interface";
+import { OrdersService } from "../../services/orders.service";
 
 @Component({
   selector: "orders",
   styleUrls: ["orders.component.css"],
   templateUrl: "orders.component.html"
 })
-export class OrderComponent {
+export class OrderComponent implements OnInit {
   orderHaeding;
-  orderItemsData: OrderItemModel[] = [
-    {
-      orderId: "xxxx1111",
-      productId: "000001",
-      productName: "PRODUCT 01",
-      quantity: 9999
-    },
-    {
-      orderId: "xxxx2222",
-      productName: "PRODUCT 02",
-      productId: "000001",
-      quantity: 8999
-    }
-  ];
+
+  orderItemsData: OrderItemModel[] = [];
+
+  constructor(private ordersService: OrdersService) {}
+
+  ngOnInit() {
+    // read data from the service
+    this.ordersService.getOrders().subscribe(orders => {
+      this.orderItemsData = orders;
+    });
+  }
 }
