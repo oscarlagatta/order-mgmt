@@ -1,0 +1,181 @@
+Social coding
+
+1.- One of the key aspects of putting code onto github is to share it with others or to join other projects and then contribute back changes to their repository. 
+Some key skills for doing so is to make a copy within your account by forking a repository and then after making some changes you will want to contribute back those changes using the pull request process. 
+This works both ways, so we will look at also reviewing pull requests, and finally accepting other's changes into our repository.
+Finally we will syncrhonize changes from our upstream repository back to our individual fork or copy of the repository. 
+
+2.- https://github.com/oscarlagatta/order-mgmt, this  is the repository we are going to fork and make available on our personal space on GitHub. 
+    2.1 we click in our profile or user name that takes us to the news feeds page  and will show us our repositories
+    2.2 we now search for the repository we would like to contribute  https://github.com/oscarlagatta/order-mgmt 
+    2.3 as now we are not associated nor part of this repository, but since this is a public repository; we can fork this repository and make contributions and later on submit pull resquests, to potentially have those contributions accepted into this repository.
+    2.4 let's start off by making a copy of this repository https://github.com/oscarlagatta/order-mgmt  to our personal space by using the forking mechanism.
+    2.5 over the top right hand side we click the FORK button that will make a copy of this repository into your personal space. 
+    2.6 We now land in our space and we have the repository forked, by having our user name at the top and then you should have /order-mgmt, which is the repository https://github.com/oscarlagatta/order-mgmt  and immediately underneath that you should have a text that says FORKED FROM oscarlagatta/order-mgmt and if we click on that link will takes us back to the repository from which we forked.
+    VERY IMPORTANT: FROM THIS POINT FORWARD WE REFER TO THIS REPOSITORY oscarlagatta/order-mgmt AS OUR UPSTREAM REPOSITORY OR OUR PARENT REPOSITORY. Since this is where we fork from.
+    2.7 Creating a BRANCH on the FORK 
+        2.7.1 We are going to clone our newly forked repository to our local system and then create a feature branch make some changes that will then set us up for a pull request later on. 
+        2.7.2 we should be on our local user pace, in our account in GitHub.
+        2.7.3 we scroll in the page to find the clone options, and we click on the 'COPY TO CLIPBOARD' button. That will copy the url to our clipboard, so now we can go to our terminal and make sure you are in your projects folder 
+        2.7.4 git clone <clipboard-copied> (PRESS ENTER)
+        2.7.5 now you should have a folder called order-mgmt under your projects folder 
+        2.7.6 cd order-mgmt 
+        2.7.7 we should be then in  master branch
+        2.7.8 LET'S CREATE A FEATURE BRANCH WHERE WE WILL DO OUR WORK.
+        2.7.9 in the command line
+            2.7.9.1 git checkout -b feature-readme (eg. feature-readme) (-b creates the branch), then it should say 
+                    Switched to a new branch 'feature-readme'      
+            2.7.9.2 ls -l (will let us know what are the files in this repository ) or dir (windows)
+            2.7.9.3 as an example we can modify the readme.md file of the project. Adding some extra text
+            2.7.9.4 Add the file to the staging area, and then commit.
+            2.7.9.4.1 git add README.md (command line) goes to the staging area
+            2.7.9.4.2 git commit -m "modifying the README.md file" (command line)
+            2.7.9.4.3 NOW WE PUSH OUR CHANGES up to GitHub
+            2.7.9.4.4 git push -u origin feature-readme (-u sets the tracking relationship) (this will ask us the email and password of our email account if not authenticated)
+            2.7.9.4.5 at the bottom we should see the following, that we created a new branch
+                        feature-readme mapping feature-readme to feature-readme  ON THE REMOTE SIDE
+                        -----------------------------------------------------------------------------
+                    * [new branch]      feature-readme -> feature-readme 
+                    Branch feature-readme set up to track remote branch feature-readme from origin.
+        2.7.10 Let's go to GitHub page. And GitHub should have detected a new branch feature-readme. That should be also available on the dropdown for branches. 
+        2.7.11 We are now going to check our newly created feature branch and the submit a PULL REQUEST TO contribute our changes to the UPSTREAM REPOSITORY. 
+        2.7.12 We now click on our newly created branch and we check the changes are there. The README.md Is a special file that if detected by GitHub will be displayed at the bottom of the repository listing. Now that we confirmed those changes have made it into GitHub on that feature branch we proceed forward submitting these contributions to the UPSTREAM FORK REPOSITORY. 
+        2.7.13 Click on the COMPARE & PULL REQUEST
+        2.7.14 By default the PULL REQUEST IS GOING TO SET UP THE RELATIONSHIP back to the UPSTREAM REPOSITORY. This happens when your repository is part of a fork. WHICH IT IS!!!
+        2.7.15 WE SHOULD HAVE NOW
+            MAIN FORK: (UPSTREAM oscarlagatta/order-mgmt OR PARENT REPO)
+            HEAD FORK: our fork WHICH IS IN OUR OWN USER SPACE (GitHub/ACCOUNT/feature-readme)
+            MAKE SURE WE ARE COMPARING OUR FEATURE BRANCH WITH MASTER.
+        2.7.16 One satisfied with this relationship we scroll down and we click CREATE PULL REQUEST.
+        2.7.17 You should notice that now you are landing in the target repository WHERE THIS PULL 
+        REQUEST IS CREATED oscarlagatta/order-mgmt 
+        AND THAT IS AN IMPORTANT DISTINCTION, BECAUSE WHAT A PULL REQUEST IS, IS THE REQUEST FROM THE UPSTREAM REPOSITORY TO PULL IN YOUR CHANGES.
+        2.7.18 We will now update our Pull request, the conversation tab has all the comments for this pull request. And if there were multiple comments on this pull request, you'll see the entire conversation on this tab. Also this tab give us the general status of this pull request. And whether or not can be merged with the targeted base branch, will be indicated by a green tick icon if it can merge. 
+        On the right hand side we can assign labels or specific milestones or assign it to another user within the repository for review. 
+        ONE THING I LIKE TO POINT OUT IS THAT I CAN KEEP ADDING MORE COMMITS TO THIS PULL REQUEST BY ADDING COMMITS TO THE UNDERLYING FEATURE BRANCH INVOLVED WITH THIS PULL REQUEST. 
+        
+        2.7.18 We are going back to the terminal are we should be on the feature-readme branch on our local GIT repository; so we will be adding more content to the README.md file before mopving forward with the pull request. We add some text and save.
+        2.7.19 WE DO A COMMIT.
+                2.7.19.1 We add to staging and commit the file 
+                2.7.19.2 So now we are one commit ahead of "origin/feature-readme", so we need to sync our changes pushing to GitHub
+                2.7.19.3 git push (command line)
+        2.7.20 In addition to those changes now being on the "order-mgmt" repository within our user space in GitHub, if we go back to the pull request page. Now you should have the new commit associated with this pull request. The original commit and the second commit. Now we are ready to accept the pull request.
+        2.7.21 REVIEW THE PULL REQUEST AND ACCEPT IT. 
+    2.8 Now the owner of the repository with read and write permission can review and accept the pull request.
+        So we should be logged into github and on the oscarlagatta/order-mgmt repository the upstream repository and we should have loaded the page for the pull request #1. And you should see this pull request as your user who just submitted the pull request as. 
+    2.9 In another browser (Me Oscar) I'll be logged into the repository because I have read and write access to this repository, and write access is required in order to accept pull request. 
+        As that user I'll go to the pull request tab that are part of my repository, once on that list I'll go to that pull request which I'm interested on reviewing. In that page I can see who submitted that pull request what commits were involved and the files changed. REAMDE.MD 
+        Now I can associate a comment with this pull request if I whish to, and in addition to standard Markdown, github supports a GitHub flavoured version which have several extra features, including emoticons; just typing :+1 will add a thumbs up icon. 
+        So then I'll click on Comment or if I want to close the pull request I can click on Close and comment.
+        But since I don't want to close this pull request I could click on Comment. 
+        Now I could see on the page the comment the admin left for the pull request. 
+        Also if I flip over to files changed we have the ability to leave comments at the source code level clicking on the plus mark.
+        Since this part of the pull request operates much like other DIFF type sections of Github, we can change our view from UNIFIED to SPLIT. 
+        Also we have the options to show or hide notes. (checkbox "Show notes")
+        So now I could go back to conversation and I'm able to review the merge status of this pull request and github will let me know if this BRANCH can be automatically merged or not. Green check means it can; Github would also let me know otherwise. 
+        Once I'm happy with the pull request I will click "MERGE PULL REQUEST" and I'm given the oportunity to modify what's going to be the commit message for this pull request merge. Then if happy I will click CONFIRM MERGE.
+
+        Now I'll get a nice MERGE ICON STATING THIS PULL REQUEST HAS BEEN MERGED INTO "oscarlagatta
+        :/order-mgmt", but while i'm still on this page I could click the REVERT button to revert this pull request.  
+
+        ----
+        Now you as user you can see that the status of the pull request will show MERGED and you should see that me or a different user has accepted your pull request. Now then from that pull request page you will have the option to delete that branch once the pull request has been merged in successfully. 
+        Since you might not need that branch you can delete it; and you should see an indicator Icon and message saying you deleted the branch. 
+        But while still on that page you'll have the option to RESOTRE BRANCH if you deleted by mistake.
+
+    3.0 Syncrhonize changes back to your Fork.
+        So the upstream or parent repository is oscarlagatta/order-mgmt which is the repository from which you forked your copy of; which is found on your account; and under "Repositories you contribute to"  
+        which will give you the option to go directly to that repository and if you wanted to you could watch or star this repository. Click Star pls :) which will send you notifications later if the repository changes for some reason. 
+        3.0.1 Now you should click on the clone icon for the repository (the upstream repository)
+        3.0.2 Go to the command line where the project is, and enter 
+                git status 
+              will show you what the current status of the repository. And it should say as follows
+              "your branch is up-to-date with 'origin/feature-readme'.
+              nothing to commit, working directory clean.
+        3.0.3 Since we know we've merged in those changes inot master ina different repository, we can change out of this branch.
+              from the command line enter 
+              git checkout master
+        Now if you go to the upstream repository you should see that there're the changes to the README.md, but IF YOU RETURN TO THAT VERSION OF THAT REPOSITORY, AND YOU SHOULDN'T HAVE THE CHANGES FOR THE README.MD FILE.  
+        HOW DO WE Syncrhonize OUR UPSTREAM REPOSITORY FROM WHICH WE FORKED DOWN TO YOUR INDIVIDUAL COPY OF THE REPOSITORY. 
+        Well unfortunately there's no direct way to do that from the Github interface so we must use our local copy as an intermediate. Go back to the command line, and you should be on the master branch. 
+
+        3.0.4 Let's see a list of all our remote repositories
+              at the command line type
+
+              git remote -v (verbose)
+              youi should see something like the following but with your own user name
+              origin  https://github.com/YOUR USER/order-mgmt.git (fetch)
+              origin  https://github.com/YOUR USER/order-mgmt.git (push)
+            
+              When you cloned this repository you had "origin" set up for free, that is when you used the git clone command, Git automatically establishes a remote reference named origin back to where you cloned from. 
+              In this case your "order-mgmt" repository on your user account on Github.
+              
+              We do also the ability to add more remotes that refer to other git repsoitories from which we can PUSH and PULL. 
+              To do that we need to use the "git remote add" command with the remote reference you'd like to create. It can be anything we want as long is something we can remember. 
+              Since I've been referring to the UPSTREAM OR PARENT repository as UPSTREAM we can create the remote reference as 'upstream' and then paste the url you should have in your clipboard already from step 3.0.1
+
+        3.0.5 From the command line type
+                git remote add upstream https://github.com/oscarlagatta/order-mgmt.git 
+              now if you do 
+                git remote -v 
+              will show you that you have two pairs of remote references: "origin" and "upstream" 
+
+                origin  https://github.com/YOUR USER/order-mgmt.git (fetch)
+                origin  https://github.com/YOUR USER/order-mgmt.git (push)
+                upstream  https://github.com/oscarlagatta/order-mgmt.git (fetch)
+                upstream  https://github.com/oscarlagatta/order-mgmt.git (push)
+
+              Technically is listed twice because you can have different remotes for both the fetch and the push; however 99% of the time they should be identical. 
+
+        3.0.6 Now use the PULL command specifying our "upstream" repository to fetch any updtes from that master branch. 
+              git pull upstream master 
+              
+              We then downloaded all the updates from the "upstream/master" repository. And we should have our README.md with all the changes that has been added; as part of our local repository. 
+              And since our local repository has the changes that we just got from "upstream" but our individual fork of the repository on GitHub DOES NOT have that, we need to PUSH our changes from our local repository to our INDIVIDUAL FORK, which is currently referenced as ORIGIN. 
+
+        3.0.7 from the command line, 
+                  git push origin master 
+
+        3.0.8 If you go to your browser, and make sure that you are in your user account on the order-mgmt repository,      refresh the browser and if you scroll down and check the readme.md file you should now have the changes       and it should display at the bottom of your listing. 
+
+        3.0.9 CLEANUP 
+            3.0.9.1 git branch -a (will show your branches including local and remote, you should be on master that's where exactly you should be and it's time to delete that feature branch 'feature-readme')
+            3.0.9.2 git branch -d feature-readme (this will delete the feature branch)
+                If you did not integrate the changes from the upstream repository onto the master branch, then you wouldn't have the changes from the feature branch on master, AND GIT WOULD COMPLAIN WHEN YOU TRY TO DELETE THE FEATURE BRANCH.
+
+                But since we've already integrated those changes, Git should allow you to delete the branch without any problems.  
+
+                if you now type 
+                    git branch -a , you should see that you only have the master branch for your remote branches.
+                    
+                    IMPORTANT NOTE: Sometimes after deleting the branch you see that you have "remotes/origin/feature-readme" which is a local reference to your remote branch. 
+
+                    But we don't have that branch anymore on github page, but in your local it still shows that remote reference. 
+
+                    IF YOU FIND YOURSELF IN THIS SITUATION, YOU CAN FETCH THE LATEST UPDATES, PASSING THE PRUNE option
+
+            3.0.9.3 from the command line
+                    git fetch -p (prune option) 
+
+                    Git will go to github noticing that the feature-readme has been deleted which it then deletes the reference to that branch.
+
+
+
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
