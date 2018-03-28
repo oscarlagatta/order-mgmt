@@ -3,5 +3,5 @@ export interface Country{
     countryC3: string,
     countryN3: string,
     countryName: string,
-    countryDivision: String, 
+    countryDivisionName: string, 
 }
