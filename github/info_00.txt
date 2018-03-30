@@ -103,7 +103,7 @@ Finally we will syncrhonize changes from our upstream repository back to our ind
               at the command line type
 
               git remote -v (verbose)
-              youi should see something like the following but with your own user name
+              you should see something like the following but with your own user name
               origin  https://github.com/YOUR USER/order-mgmt.git (fetch)
               origin  https://github.com/YOUR USER/order-mgmt.git (push)
             
