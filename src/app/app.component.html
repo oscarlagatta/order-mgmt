@@ -1,7 +1,42 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+  <!-- Property Binding -->
+  <!-- element.innerHTML / element.innerText
+    ANGULAR NEEDS TO BIND TO A PROPERTY USING [PROPERTY BINDING]; WHICH INDICATES A ONE WAY DATA FLOW SYNTAX. (SUGAR SYNTAX)
+  -->
+  <h1 [innerHTML]="title"></h1>
+  <!-- <img [src]="logo"> -->
+  <!-- <button (click)="handleClick()"></button> -->
+  <!-- <input
+    type="text"
+    [(ngModel)]="name"
+
+    > -->
+    <!-- (ngModelChange)="handleChange($event)" -->
+    <!-- (blur)="handleBlur($event)" -->
+    <!-- (input)="handleInput($event)" -->
+    <!-- Events: input, change, blur, and others. -->
+
+
+  <!-- <div>
+      {{name}}
+  </div> -->
+
+  <!-- Interpolation Expressions -->
+  <!-- <h1>
+    Welcome to {{ title + '!' }}
+    <div>
+      {{ numberOne }}
+    </div>
+    <div>
+      {{ numberTwo }}
+    </div>
+    <div>
+        {{ numberOne + numberTwo }}
+    </div>
+    <div>
+        {{ isHappy ? ':)' : ':(' }}
+    </div>
+  </h1> -->
 </div>
 <orders></orders>

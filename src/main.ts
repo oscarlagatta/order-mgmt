@@ -1,5 +1,5 @@
 import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'; // templates / binding / dependency injection, compiles the app in our browser
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
