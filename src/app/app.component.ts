@@ -1,12 +1,12 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"]
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = "Sales Order System";
+  title = 'Sales Order System';
   // logo:string = "assets/img/google-logo.svg";
 
   // numberOne: number = 1;
@@ -24,16 +24,16 @@ export class AppComponent {
   //   console.log($event);
   //   this.name = $event.target.value;
   // }
-  
+
   // handleClick() {
   //   // this event will give us the entire input itself.
-    
+
   //   this.name = 'Oscar Lagatta'
   // }
 
   // /**
   //  * when ngModelChange fires will pass an event stream
-  //  * @param value 
+  //  * @param value
   //  */
   // handleChange(value:string){
   //   this.name=value
