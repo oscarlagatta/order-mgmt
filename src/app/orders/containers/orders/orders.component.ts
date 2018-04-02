@@ -4,7 +4,7 @@ import { OrdersService } from "../../services/orders.service";
 
 @Component({
   selector: "orders",
-  styleUrls: ["orders.component.css"],
+  styleUrls: ["orders.component.scss"],
   templateUrl: "orders.component.html"
 })
 export class OrderComponent implements OnInit {

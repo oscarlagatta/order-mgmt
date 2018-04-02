@@ -1517,5 +1517,12 @@
       "currencyName":"Great Britain Pound",
       "currencySymbol":"£"
     }
+  ],
+  "customers": [
+      {"id": 1, "firstname":"Stephen"  , "lastname":"Grider" , "active": true},
+      {"id": 2, "firstname":"Rose"     , "lastname":"Smith"  , "active": false},
+      {"id": 3, "firstname":"Moshe"    , "lastname":"Solomon", "active": true},
+      {"id": 4, "firstname":"Guillermo", "lastname":"Castro" , "active": false},
+      {"id": 5, "firstname":"Alam"     , "lastname":"Johnson", "active": true}
   ]
 }
