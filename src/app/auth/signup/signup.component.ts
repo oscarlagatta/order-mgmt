@@ -13,6 +13,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
     this.maxDate = new Date();
+    // only allows to enter a date of birth if within 18 years
     this.maxDate.setFullYear(this.maxDate.getFullYear() - 18);
   }
 
