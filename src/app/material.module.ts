@@ -34,6 +34,7 @@ import {
   MatFormFieldModule,
   MatExpansionModule,
   MatStepperModule,
+  MatNativeDateModule,
 } from '@angular/material';
 
 @NgModule({
@@ -46,6 +47,7 @@ import {
     MatCheckboxModule,
     MatChipsModule,
     MatDatepickerModule,
+    MatNativeDateModule,
     MatDialogModule,
     MatDividerModule,
     MatExpansionModule,
@@ -80,6 +82,7 @@ import {
     MatCheckboxModule,
     MatChipsModule,
     MatDatepickerModule,
+    MatNativeDateModule,
     MatDialogModule,
     MatDividerModule,
     MatExpansionModule,
