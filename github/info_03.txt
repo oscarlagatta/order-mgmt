@@ -5,7 +5,6 @@ Manually change in .angular-cli.json or run:
 
 ng set defaults.styleExt scss
 
-
 Rename your existing .css files to .scss (i.e. styles.css and app/app.component.css)
 
 Point the CLI to find styles.scss
