@@ -6,9 +6,8 @@ Proof of concept
 
 ## Purpose
 
-Sample website with plenty of Angular functionality for demo
-
-# Purpose Guillermo
+###The idea is to provide to a potential customer a sales order at the point of sale.
+###Your order will be personalized and this will result in helping and closing more sales.
 
 ## Development server
 
