@@ -1,36 +1,34 @@
 .status {
+  width: 10px;
+  height: 10px;
+  background: #c0392b;
+  display: block;
+  margin: 8px 10px 0 0;
+  float: left;
+  border-radius: 50%;
 
-    width: 10px;
-    height: 10px;
-    background:#c0392b;
-    display:block;
-    margin: 8px 10px 0 0;
-    float:left;
-    border-radius: 50%;
+  &.active {
+    background: #2ecc71;
+  }
 
-    &.active {
-        background: #2ecc71;
-    }
-
-    &.inactive {
-        background: #5250ec
-    }
+  &.inactive {
+    background: #5250ec;
+  }
 }
 
 .example-container {
-    display: flex;
-    flex-direction: column;
-    max-height: 500px;
-    min-width: 300px;
-  }
-  
-  .mat-table {
-    overflow: auto;
-    max-height: 500px;
-  }
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  min-width: 300px;
+}
 
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
 
 .example-header {
-    min-height: 64px;
-    padding: 8px 24px 0;
-  }
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
