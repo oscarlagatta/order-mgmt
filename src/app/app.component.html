@@ -1,96 +1,18 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<!--div style="text-align:center"-->
-  <!-- Property Binding -->
-  <!-- element.innerHTML / element.innerText
-    ANGULAR NEEDS TO BIND TO A PROPERTY USING [PROPERTY BINDING]; WHICH INDICATES A ONE WAY DATA FLOW SYNTAX. (SUGAR SYNTAX)
-  -->
-  <!-- <h1 [innerHTML]="title"></h1> -->
-  <!-- <img [src]="logo"> -->
-  <!-- <button (click)="handleClick()"></button> -->
-  <!-- <input
-    type="text"
-    [(ngModel)]="name"
-
-    > -->
-    <!-- (ngModelChange)="handleChange($event)" -->
-    <!-- (blur)="handleBlur($event)" -->
-    <!-- (input)="handleInput($event)" -->
-    <!-- Events: input, change, blur, and others. -->
-
-
-  <!-- <div>
-      {{name}}
-  </div> -->
-
-  <!-- Interpolation Expressions -->
-  <!-- <h1>
-    Welcome to {{ title + '!' }}
-    <div>
-      {{ numberOne }}
-    </div>
-    <div>
-      {{ numberTwo }}
-    </div>
-    <div>
-        {{ numberOne + numberTwo }}
-    </div>
-    <div>
-        {{ isHappy ? ':)' : ':(' }}
-    </div>
-  </h1> -->
-<!--/div-->
 <mat-sidenav-container>
   <mat-sidenav #sidenav role="navigation">
-    <mat-nav-list>
-        <a mat-list-item routerLink="/signup" (click)="sidenav.close()">
-          <mat-icon>face</mat-icon>
-          <span class="nav-caption">Signup</span>
-        </a>
-        <a mat-list-item routerLink="/login" (click)="sidenav.close()">
-          <mat-icon>input</mat-icon>
-          <span class="nav-caption">Login</span>
-        </a>
-        <a mat-list-item routerLink="/customers" (click)="sidenav.close()">
-          <mat-icon>group</mat-icon>
-          <span class="nav-caption">Customers</span>
-        </a>
-        <mat-list-item>
-            <button mat-icon-button>
-                <mat-icon>eject</mat-icon>
-                <span class="nav-caption">Logout</span>
-              </button>
-        </mat-list-item>
-        
-    </mat-nav-list>
+    <!-- one important word of caution, we could of course have the idea 
+      to put the mat-sidenave also into its own component and not just the
+      content; there are solutions to make this work for sure but in general
+      you can quickly end up in a situation where you fail opening the sidenavToggle
+      because mat-sidenav ALWAYS NEEDS TO BE A DIRECT CHILD OF MAT-SIDE-CONTAINER and
+      you might break that chain if you add another component in between your own 
+      component. -->
+    <app-sidenav-list (closeSidenav)="sidenav.close()"></app-sidenav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <div fxHide.gt-xs>
-        <button mat-icon-button (click)="sidenav.toggle()">
-          <mat-icon>menu</mat-icon>
-        </button></div>
-      <div><a routerLink="/">LOGO</a></div>
-      <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
-        <ul fxLayout fxLayoutGap="10px" class="navigation-items">
-          <li>
-              <a routerLink="/signup">Signup</a>
-          </li>
-          <li>
-              <a routerLink="/login">Login</a>
-          </li>
-          <li>
-              <a routerLink="/customers">Customers</a>
-          </li>
-          <li>
-            <a>Logout</a>
-          </li>
-        </ul>
-        
-      </div>
-    </mat-toolbar>
+    <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
     <main>
         <router-outlet></router-outlet>
     </main>
-    
   </mat-sidenav-content>
 </mat-sidenav-container>
