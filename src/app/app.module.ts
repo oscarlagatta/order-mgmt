@@ -6,6 +6,17 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+import { StoreModule, MetaReducer } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+
+// not used in production
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { storeFreeze } from 'ngrx-store-freeze';
+
+// export const metaReducers: MetaReducer<any>[] = !environment.production
+//   ? [storeFreeze]
+//   : [];
+
 import { AppComponent } from './app.component';
 
 import { OrdersService } from './orders/services/orders.service';
@@ -19,6 +30,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './nagivation/header/header.component';
 import { SidenavListComponent } from './nagivation/sidenav-list/sidenav-list.component';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -40,6 +52,9 @@ import { SidenavListComponent } from './nagivation/sidenav-list/sidenav-list.com
     SuppliersModule,
     AppRoutingModule,
     FlexLayoutModule,
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([]),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [],
   bootstrap: [AppComponent],
