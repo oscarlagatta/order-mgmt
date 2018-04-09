@@ -1,0 +1,1 @@
+ng g c documents/containers/documents --skip-import
