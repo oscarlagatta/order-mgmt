@@ -12,8 +12,17 @@ import * as fromServices from './services';
 import { HttpClientModule } from '@angular/common/http';
 import { DocumentRoutingModule } from './document-routing.module';
 
+import { StoreModule } from '@ngrx/store';
+
+import { reducers } from './store';
+
 @NgModule({
-  imports: [CommonModule, HttpClientModule, DocumentRoutingModule],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    DocumentRoutingModule,
+    StoreModule.forFeature('documents', reducers),
+  ],
   providers: [...fromServices.services],
   declarations: [...fromContainers.conatiners, ...fromComponents.components],
   exports: [...fromContainers.conatiners, ...fromComponents.components],
