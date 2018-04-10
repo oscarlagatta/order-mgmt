@@ -159,8 +159,9 @@ Finally we will syncrhonize changes from our upstream repository back to our ind
 
                     Git will go to github noticing that the feature-readme has been deleted which it then deletes the reference to that branch.
 
+                    If still doesn't work try the following:
 
-
+                    git push origin :feature-readme
         
         
 
