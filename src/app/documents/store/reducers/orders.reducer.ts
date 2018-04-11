@@ -8,17 +8,7 @@ export interface OrderState {
 }
 
 export const initialState: OrderState = {
-  data: [
-    {
-      id: 1,
-      customerName: 'Alam Shah',
-      orderLines: [
-        { id: 1, productName: 'Product 01' },
-        { id: 2, productName: 'Product 02' },
-        { id: 3, productName: 'Product 03' },
-      ],
-    },
-  ],
+  data: [],
   loaded: false,
   loading: false,
 };
@@ -35,10 +25,14 @@ export function reducer(
       };
     }
     case fromOrders.LOAD_ORDERS_SUCCESS: {
+      console.log(action.payload);
+      const data = action.payload;
+
       return {
         ...state,
         loading: false,
         loaded: true,
+        data,
       };
     }
     case fromOrders.LOAD_ORDERS_FAIL: {
