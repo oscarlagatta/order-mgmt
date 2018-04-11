@@ -13,8 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { DocumentRoutingModule } from './document-routing.module';
 
 import { StoreModule } from '@ngrx/store';
-
-import { reducers } from './store';
+import { EffectsModule } from '@ngrx/effects';
+import { reducers, effects } from './store';
 
 @NgModule({
   imports: [
@@ -22,6 +22,7 @@ import { reducers } from './store';
     HttpClientModule,
     DocumentRoutingModule,
     StoreModule.forFeature('documents', reducers),
+    EffectsModule.forFeature(effects),
   ],
   providers: [...fromServices.services],
   declarations: [...fromContainers.conatiners, ...fromComponents.components],

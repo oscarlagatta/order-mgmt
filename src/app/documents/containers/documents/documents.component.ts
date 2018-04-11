@@ -27,5 +27,7 @@ export class DocumentsComponent implements OnInit {
     // .subscribe(state => {
     //   console.log(state);
     // });
+    // first action.
+    this.store.dispatch(new fromStore.LoadOrders());
   }
 }
