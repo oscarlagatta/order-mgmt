@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { StoreModule, MetaReducer } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
+import { reducers } from './store';
+
 // not used in production
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { storeFreeze } from 'ngrx-store-freeze';
@@ -52,7 +54,7 @@ import { environment } from '../environments/environment';
     SuppliersModule,
     AppRoutingModule,
     FlexLayoutModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot(reducers, {}),
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
