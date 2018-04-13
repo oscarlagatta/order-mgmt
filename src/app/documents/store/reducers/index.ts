@@ -40,7 +40,15 @@ export const getOrderState = createSelector(
   (state: DocumentsState) => state.orders
 );
 
-export const getAllOrders = createSelector(getOrderState, fromOrders.getOrders);
+export const getOrdersEntities = createSelector(
+  getOrderState,
+  fromOrders.getOrdersEntities
+);
+
+export const getAllOrders = createSelector(getOrdersEntities, entities => {
+  return Object.keys(entities).map(id => entities[id]);
+});
+
 export const getOrdersLoaded = createSelector(
   getOrderState,
   fromOrders.getOrdersLoaded
