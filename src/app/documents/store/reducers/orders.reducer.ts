@@ -2,13 +2,13 @@ import { Order } from '../../models/order.model';
 import * as fromOrders from '../actions/orders.action';
 
 export interface OrderState {
-  data: Order[];
+  entities: { [id: number]: Order };
   loaded: boolean;
   loading: boolean;
 }
 
 export const initialState: OrderState = {
-  data: [],
+  entities: {},
   loaded: false,
   loading: false,
 };
@@ -25,14 +25,23 @@ export function reducer(
       };
     }
     case fromOrders.LOAD_ORDERS_SUCCESS: {
-      console.log(action.payload);
-      const data = action.payload;
-
+      const orders = action.payload;
+      const entities = orders.reduce(
+        (entities: { [id: number]: Order }, order: Order) => {
+          return {
+            ...entities,
+            [order.id]: order,
+          };
+        },
+        {
+          ...state.entities,
+        }
+      );
       return {
         ...state,
         loading: false,
         loaded: true,
-        data,
+        entities,
       };
     }
     case fromOrders.LOAD_ORDERS_FAIL: {
@@ -46,6 +55,6 @@ export function reducer(
   return state;
 }
 
+export const getOrdersEntities = (state: OrderState) => state.entities;
 export const getOrdersLoading = (state: OrderState) => state.loading;
 export const getOrdersLoaded = (state: OrderState) => state.loaded;
-export const getOrders = (state: OrderState) => state.data;

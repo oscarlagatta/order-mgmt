@@ -14,20 +14,10 @@ import { Order } from '../../models/order.model';
 export class DocumentsComponent implements OnInit {
   orders$: Observable<Order[]>;
 
-  //constructor(private orderService: OrdersService) {}
   constructor(private store: Store<fromStore.DocumentsState>) {}
-  //ngOnInit() {
-  // this.orderService.getOrders().subscribe(orders => {
-  //   this.orders = orders;
-  // });
-  //}
-
   ngOnInit() {
     this.orders$ = this.store.select<any>(fromStore.getAllOrders);
-    // .subscribe(state => {
-    //   console.log(state);
-    // });
-    // first action.
+
     this.store.dispatch(new fromStore.LoadOrders());
   }
 }
