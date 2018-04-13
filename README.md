@@ -1,8 +1,5 @@
-# OrderMgmt
-
-ORDER MANAGEMENT POC
-
-Proof of concept
+# Ng Order Managment
+![](src/assets/img/wiki-logo.jpg)
 
 ## Purpose
 
