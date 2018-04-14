@@ -1,42 +1,18 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <!-- Property Binding -->
-  <!-- element.innerHTML / element.innerText
-    ANGULAR NEEDS TO BIND TO A PROPERTY USING [PROPERTY BINDING]; WHICH INDICATES A ONE WAY DATA FLOW SYNTAX. (SUGAR SYNTAX)
-  -->
-  <!-- <h1 [innerHTML]="title"></h1> -->
-  <!-- <img [src]="logo"> -->
-  <!-- <button (click)="handleClick()"></button> -->
-  <!-- <input
-    type="text"
-    [(ngModel)]="name"
-
-    > -->
-    <!-- (ngModelChange)="handleChange($event)" -->
-    <!-- (blur)="handleBlur($event)" -->
-    <!-- (input)="handleInput($event)" -->
-    <!-- Events: input, change, blur, and others. -->
-
-
-  <!-- <div>
-      {{name}}
-  </div> -->
-
-  <!-- Interpolation Expressions -->
-  <!-- <h1>
-    Welcome to {{ title + '!' }}
-    <div>
-      {{ numberOne }}
-    </div>
-    <div>
-      {{ numberTwo }}
-    </div>
-    <div>
-        {{ numberOne + numberTwo }}
-    </div>
-    <div>
-        {{ isHappy ? ':)' : ':(' }}
-    </div>
-  </h1> -->
-</div>
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation">
+    <!-- one important word of caution, we could of course have the idea 
+      to put the mat-sidenave also into its own component and not just the
+      content; there are solutions to make this work for sure but in general
+      you can quickly end up in a situation where you fail opening the sidenavToggle
+      because mat-sidenav ALWAYS NEEDS TO BE A DIRECT CHILD OF MAT-SIDE-CONTAINER and
+      you might break that chain if you add another component in between your own 
+      component. -->
+    <app-sidenav-list (closeSidenav)="sidenav.close()"></app-sidenav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -159,12 +159,27 @@ Finally we will syncrhonize changes from our upstream repository back to our ind
 
                     Git will go to github noticing that the feature-readme has been deleted which it then deletes the reference to that branch.
 
+                    If still doesn't work try the following:
 
-
+                    git push origin :feature-readme
         
         
 
 
+1.- git checkout -b feature-XXXXXX
+2.- git add README.md (command line) goes to the staging area
+3.- git commit -m "COMMIT MESSAGE" 
+4.- git push -u origin feature-XXXXXX (-u sets the tracking relationship)
+5.- git status (the branch should be clean nothing else to commit)
+6.- git checkout master
+7.- git remote -v
+8.- git remote add upstream https://github.com/oscarlagatta/order-mgmt.git 
+9.- git remove -v
+10.- git pull upstream master 
+11.- git push origin master
+12.- DELETE THE BRANCH IN GITHUB page
+13.- git branch -d feature-XXXXXX 
+14.- git fetch -p 
 
 
 

@@ -1,0 +1,7 @@
+Angular material - Toolbar and Sidenav
+Toolbar: https://material.angular.io/components/toolbar/overview
+
+Sidenav: https://material.angular.io/components/sidenav/overview which is responsive site navigation that you can toggle and which we can push over the page content or remove it from.
+
+If you want to implement a pattern where you have a toolbar at the top but also a sidenav that we can toggle the we will actually need to include the toolbar into a <mat-sidenav-container>; 
+

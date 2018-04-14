@@ -35,6 +35,7 @@ import {
   MatExpansionModule,
   MatStepperModule,
   MatNativeDateModule,
+  MatSidenavContainer,
 } from '@angular/material';
 
 @NgModule({
