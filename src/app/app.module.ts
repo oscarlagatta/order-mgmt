@@ -34,11 +34,16 @@ import { HeaderComponent } from './nagivation/header/header.component';
 import { SidenavListComponent } from './nagivation/sidenav-list/sidenav-list.component';
 import { environment } from '../environments/environment';
 
+import { ProductsModule } from './products/products.module';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     LoginComponent,
+    productline
     WelcomeComponent,
     HeaderComponent,
     SidenavListComponent,
@@ -51,6 +56,7 @@ import { environment } from '../environments/environment';
     MaterialModule,
     OrdersModule, // DashboardComponent, SettingsComponent
     CustomersModule,
+    ProductsModule, // New module
     SuppliersModule,
     AppRoutingModule,
     FlexLayoutModule,

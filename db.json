@@ -1564,5 +1564,13 @@
     { "id": 3, "firstname": "Moshe", "lastname": "Solomon", "active": false },
     { "id": 4, "firstname": "Guillermo", "lastname": "Castro", "active": true },
     { "id": 5, "firstname": "Alam", "lastname": "Shah", "active": true }
-  ]
-}
+  ],
+
+  "products":[
+    { "productName":"Tshirt", "productId":1, "productSKU":"sk1","productDepartment":"A","productCatagory":"a","productPrice":10, "active": true },
+    { "productName":"Touser", "productId":2, "productSKU":"sk2","productDepartment":"B","productCatagory":"b","productPrice":10, "active": true },
+    { "productName":"Jamper", "productId":3, "productSKU":"sk3","productDepartment":"C","productCatagory":"c","productPrice":10, "active": true },
+    { "productName":"Shirt", "productId":4, "productSKU":"sk3","productDepartment":"D","productCatagory":"d","productPrice":10, "active": true }
+    ]
+  }
+
