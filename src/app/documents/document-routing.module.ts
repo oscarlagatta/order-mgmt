@@ -9,6 +9,8 @@ import * as fromContainers from './containers';
 
 const ROUTES: Routes = [
   { path: '', component: fromContainers.DocumentsComponent },
+  { path: 'new', component: fromContainers.DocumentItemComponent },
+  { path: ':orderId', component: fromContainers.DocumentItemComponent },
 ];
 
 @NgModule({
