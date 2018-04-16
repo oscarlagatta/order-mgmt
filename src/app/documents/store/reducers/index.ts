@@ -7,9 +7,11 @@
 
 import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
 import * as fromOrders from './orders.reducer';
+import * as fromOrderlines from './orderlines.reducer';
 
 export interface DocumentsState {
   orders: fromOrders.OrderState;
+  orderlines: fromOrderlines.OrderlinesState;
 }
 
 /**
@@ -21,6 +23,7 @@ export interface DocumentsState {
  */
 export const reducers: ActionReducerMap<DocumentsState> = {
   orders: fromOrders.reducer,
+  orderlines: fromOrderlines.reducer,
 };
 
 // create the base level of our state object
