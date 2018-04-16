@@ -1,6 +1,7 @@
 <h1>Order Details</h1>
 
+<!-- The async pipe calls the .subscribe of the Observable -->
 <app-order-form
-  [order]="order$ | async">
-
+  [order]="order$ | async"
+  [orderlines]="orderlines$ | async">
 </app-order-form>

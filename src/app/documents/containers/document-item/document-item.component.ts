@@ -14,9 +14,15 @@ import { OrderLine } from '../../models/order-line.model';
 })
 export class DocumentItemComponent implements OnInit {
   order$: Observable<Order>;
+  orderlines$: Observable<OrderLine[]>;
+
   constructor(private store: Store<fromStore.DocumentsState>) {}
 
   ngOnInit() {
+    this.store.dispatch(new fromStore.LoadOrderlines());
+
     this.order$ = this.store.select(fromStore.getSelectedOrder);
+
+    this.orderlines$ = this.store.select(fromStore.getAllOrderlines);
   }
 }
