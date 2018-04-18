@@ -8,7 +8,7 @@ Proof of concept
 
 Sample website with plenty of Angular functionality for demo
 
-# Purpoose Guillermo
+# Purpose Guillermo modified by Moshe
 
 ## Development server
 
