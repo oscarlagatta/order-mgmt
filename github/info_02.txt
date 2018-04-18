@@ -1,0 +1,22 @@
+
+  Array Assignment
+  
+  The spread operator (...) allows you to easily place an expanded version of an array into another array. This is demonstrated in the example below...
+  
+  var list = [1, 2];
+  list = [...list, 3, 4];
+  console.log(list); // [1, 2, 3, 4]
+  
+  You can put the expanded array in at any position, and get the effect you'd expect:
+  
+  var list = [1, 2];
+  list = [0, ...list, 3 , 4]
+  console.log(list); // [0, 1, 2, 3, 4];
+  
+  Object spread
+  You can also spread an object into another object. A common use case is to simply add a property to an object without mutating the original:
+
+ const point2D = {x: 1, y: 2};
+ // Create a new object by using all the point2D props along with z 
+ const point3D = {...point2D, z: 3};
+ 

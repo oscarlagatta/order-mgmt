@@ -1,4 +1,4 @@
 export interface PaymentMethodModel{
     paymentMethodId:number;
-    paymentMethodName:string;
+    paymentMethodName:string; /* Cash, transfer, notes, Paypal, Visa... */
 }

@@ -1,0 +1,15 @@
+In an existing angular-cli project that was set up with the default css styles you will need to do a few things:
+
+Change the default style extension to scss
+Manually change in .angular-cli.json or run:
+
+ng set defaults.styleExt scss
+
+Rename your existing .css files to .scss (i.e. styles.css and app/app.component.css)
+
+Point the CLI to find styles.scss
+
+Manually change the file extensions in apps[0].styles in .angular-cli.json
+
+Point the components to find your new style files
+Change the styleUrls in your components to match your new file names

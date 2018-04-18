@@ -1,3 +1,6 @@
+/**
+ *
+ */
 export interface OrderItemModel {
   orderId: string;
   productId: string;

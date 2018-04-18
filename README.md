@@ -1,11 +1,7 @@
-# OrderMgmt
-
-ORDER MANAGEMENT POC
-
-Proof of concept
+# Ng Order Managment
+![](src/assets/img/wiki-logo.jpg)
 
 ## Purpose
-
 Sample website with plenty of Angular functionality for demo
 
 # Purpose Guillermo modified by Moshe
@@ -31,5 +27,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
+### The idea is to provide to a potential customer a sales order at the point of sale.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Your order will be personalized and this will result in helping and closing more sales.

@@ -1,0 +1,7 @@
+Implementing NGRX - State Management with Angular
+
+We create some Actions, LOAD_ORDERS, LOAD_ORDERS_FAIL, LOAD_ORDERS_SUCCESS that we will dispatch with NGRX EFFECTS
+
+We can use them in the Reducer
+
+Initial State originally is hardcoded, and we composed few selectors to get the data in the component.

@@ -1,0 +1,22 @@
+<div>
+  Order ID: {{order.id}} 
+</div>
+<div>
+  Customer Name: {{order.customerName}} 
+</div>
+
+<label>
+  <h4>Select Order Lines</h4>
+</label>
+
+<div class="order-lines">
+  <div 
+    class="order-lines-item"
+    *ngFor="let line of orderlines;">
+    {{ line.id }}
+    {{ line.productName }}
+  
+  </div>
+   
+  
+</div>

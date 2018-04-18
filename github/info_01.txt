@@ -1,0 +1,43 @@
+FOR MONDAY 1 APRIL
+------------------
+0.- Container and Presentational Components
+1.- JAVASCRIPT COURSE FINISHED
+2.- GIT DOCUMENTATION READ FINISHED AND IF POSSIBLE LEARNT ???? :-)
+3.- COLLABORATE WITH THE DOCUMENTATION AND PROJECT 
+4.- WE WILL START DOING THE FOLLOWING
+    4.1- PROPERTY BINDING
+    4.2- EVENT BINDING
+    4.3- TWO WAY DATA BINDING (banana in the box)
+    4.4- TEMPLATE REF
+    4.5- ngIf
+    4.6- ngFor
+    4.7- ngClass
+    4.8- ngStyle
+
+
+
+Container and Presentational Components
+
+1.- Difference between Container and a presentational Components, Statefull and Stateless components, or smart and dumb components. (same thing)
+2.- What do they actually mean.
+
+    Having a DOM TREE with a list of components 
+    If we add a server to provide real data from an API, we immediately make the component a smart component. the smart component which is the container component essentially contains all the other components that do not know about the data however the smart component can then pass the data down to the child components. 
+
+
+    SMART  / CONTAINER Components
+    
+    1.- Communicate with services and render child components
+
+    Dumb / Presentational Components
+    
+    1.- Accept data via Inputs 
+    2.- Emit data changes via event outputs
+
+
+
+
+
+
+
+
