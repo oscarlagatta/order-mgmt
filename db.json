@@ -15,7 +15,7 @@
     {
       "id": 1,
       "customerName": "Alam Shah",
-      "orderLines": [
+      "orderlines": [
         { "id": 1, "productName": "Product 01" },
         { "id": 2, "productName": "Product 02" },
         { "id": 3, "productName": "Product 03" }
@@ -24,7 +24,7 @@
     {
       "id": 2,
       "customerName": "Moshe Solomon",
-      "orderLines": [
+      "orderlines": [
         { "id": 3, "productName": "Product 03" },
         { "id": 4, "productName": "Product 04" },
         { "id": 5, "productName": "Product 05" }
@@ -33,7 +33,7 @@
     {
       "id": 3,
       "customerName": "Guillermo Castro",
-      "orderLines": [
+      "orderlines": [
         { "id": 5, "productName": "Product 05" },
         { "id": 6, "productName": "Product 06" },
         { "id": 7, "productName": "Product 07" }
@@ -42,7 +42,7 @@
     {
       "id": 4,
       "customerName": "Oscar Lagatta",
-      "orderLines": [
+      "orderlines": [
         { "id": 7, "productName": "Product 07" },
         { "id": 8, "productName": "Product 08" },
         { "id": 9, "productName": "Product 09" },

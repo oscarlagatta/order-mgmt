@@ -1,5 +1,14 @@
 
+<div class="documents">
+  <div class="documents_new">
+      <button mat-raised-button color="primary">New Order</button>
+  </div>
+  <div class="documents_list">
+    <div *ngIf="!((orders$ | async)?.length)">
+      No orders, add one to get started.
+    </div>
+    <order-item *ngFor="let order of (orders$ | async)" [order]="order">
+    </order-item>
+  </div>
 
-<app-order-item *ngFor="let order of (orders$ | async)" [order]="order">
-
-</app-order-item>
+</div>

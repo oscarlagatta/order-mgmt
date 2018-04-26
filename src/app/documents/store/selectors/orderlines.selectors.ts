@@ -22,7 +22,12 @@ export const getOrderlinesEntities = createSelector(
   fromOrderlines.getOrderlineEntities
 );
 
-// for our componebt to consume
+export const getSelectedOrderlines = createSelector(
+  getOrderlinesState,
+  fromOrderlines.getSelectedOrderlines
+);
+
+// for our component to consume
 export const getAllOrderlines = createSelector(
   getOrderlinesEntities,
   entities => {

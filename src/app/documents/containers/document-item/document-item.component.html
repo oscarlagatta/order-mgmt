@@ -1,7 +1,14 @@
 <h1>Order Details</h1>
-
 <!-- The async pipe calls the .subscribe of the Observable -->
 <app-order-form
   [order]="order$ | async"
-  [orderlines]="orderlines$ | async">
+  [orderlines]="orderlines$ | async"
+  (selected)="onSelect($event)"
+  (create)="onCreate($event)"
+  (update)="onUpdate($event)"
+  (remove)="onRemove($event)">
+  
+  <order-display
+    [order]="visualise"
+  ></order-display>
 </app-order-form>

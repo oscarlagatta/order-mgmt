@@ -1,3 +1,9 @@
-<p>
-  order-lines works!
-</p>
+<div class="order-lines">
+  <div 
+    class="order-lines-item"
+    *ngFor="let line of orderlines"
+    (click)="selectOrderline(line)"
+    [class.active]="existsInOrderLines(line)">
+      {{line.id}} ::: {{line.productName}}
+  </div>
+</div>

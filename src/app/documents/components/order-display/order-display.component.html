@@ -1,3 +1,12 @@
-<p>
-  order-display works!
-</p>
+<div class="order-display">
+  <div class="order-display__base" *ngFor="let line of order?.orderlines; index as i;">
+      <div>
+          <label for="">
+              {{ line.id }}
+          </label> 
+          <label for="">
+              {{line.productName }}
+          </label>
+      </div>
+  </div>
+</div>

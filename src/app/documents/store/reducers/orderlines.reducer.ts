@@ -7,12 +7,14 @@ export interface OrderlinesState {
   entities: { [id: number]: OrderLine };
   loaded: boolean;
   loading: boolean;
+  selectedOrderlines: number[];
 }
 
 export const initialState: OrderlinesState = {
   entities: {},
   loaded: false,
   loading: false,
+  selectedOrderlines: [],
 };
 
 export function reducer(
@@ -20,6 +22,14 @@ export function reducer(
   action: fromOrderlines.OrderlinesActions
 ): OrderlinesState {
   switch (action.type) {
+    case fromOrderlines.VISUALISE_ORDERLINES: {
+      const selectedOrderlines = action.payload;
+
+      return {
+        ...state,
+        selectedOrderlines,
+      };
+    }
     case fromOrderlines.LOAD_ORDERLINES: {
       return {
         ...state,
@@ -69,3 +79,5 @@ export function reducer(
 export const getOrderlineEntities = (state: OrderlinesState) => state.entities;
 export const getOrderlinesLoaded = (state: OrderlinesState) => state.loaded;
 export const getOrderlinesLoading = (state: OrderlinesState) => state.loading;
+export const getSelectedOrderlines = (state: OrderlinesState) =>
+  state.selectedOrderlines;
