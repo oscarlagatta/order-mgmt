@@ -7,14 +7,18 @@ import { LoginComponent } from './auth/login/login.component';
 import { CustomersComponent } from './customers/containers';
 
 const ROUTES: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'documents' },
-  { path: 'signup', component: SignupComponent },
-  { path: 'login', component: LoginComponent },
   { path: 'customers', component: CustomersComponent },
   {
     path: 'documents',
     loadChildren: './documents/documents.module#DocumentsModule',
   },
+  {
+    path: 'products',
+    loadChildren: './products/products.module#ProductsModule',
+  },
+  { path: '', pathMatch: 'full', redirectTo: 'documents' },
+  { path: 'signup', component: SignupComponent },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({
