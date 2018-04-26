@@ -1,11 +1,10 @@
 <div class="order-item">
   <a [routerLink]="['/documents', order.id]">
-    <!-- <order-display
-      [order]="order">
-    </order-display> -->
     <h4>{{ order.customerName }}</h4>
-    <button type="button" class="btn btn__ok">
-      View Order
-    </button>
+    <order-display
+      [order]="order">
+    </order-display>
+  
+    <button mat-raised-button color="accent">View Order</button>
   </a>
 </div>

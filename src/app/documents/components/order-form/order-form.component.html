@@ -1,22 +1,35 @@
+<!-- <pre>{{ order | json}}</pre> -->
+
 <div>
-  Order ID: {{order.id}} 
-</div>
-<div>
-  Customer Name: {{order.customerName}} 
+  <form [formGroup]="form">
+     
+        <h4>Customer Name</h4>
+        <mat-form-field class="example-form-field">
+            <input matInput type="text" placeholder="Customer Name" formControlName="customerName"/>
+            <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="customerName=''">
+              <mat-icon>close</mat-icon>
+            </button>          
+        </mat-form-field>
+        <label>
+            <h4>Select Order Lines</h4>
+          </label>
+          
+          <div class="pizza-form__list">
+              <order-lines
+                [orderlines]="orderlines"
+                formControlName="orderlines">
+              </order-lines>
+            </div>
+          
+          <div class="order-lines">
+            <div class="">
+              <button mat-raised-button color="primary" *ngIf="!exists"  (click)="createOrder(form)">Create Order</button>
+              <button mat-raised-button color="primary" *ngIf="exists"  (click)="updateOrder(form)">Save Changes</button> 
+              <button mat-raised-button color="warn" *ngIf="exists"  (click)="removeOrder(form)">Delete Order</button>  
+            </div>
+          </div>
+  </form>
 </div>
 
-<label>
-  <h4>Select Order Lines</h4>
-</label>
+<!-- <ng-content></ng-content> -->
 
-<div class="order-lines">
-  <div 
-    class="order-lines-item"
-    *ngFor="let line of orderlines;">
-    {{ line.id }}
-    {{ line.productName }}
-  
-  </div>
-   
-  
-</div>

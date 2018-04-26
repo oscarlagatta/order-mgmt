@@ -15,17 +15,21 @@ import { DocumentRoutingModule } from './document-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { reducers, effects } from './store';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../material.module';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
+    ReactiveFormsModule,
     DocumentRoutingModule,
+    MaterialModule,
     StoreModule.forFeature('documents', reducers),
     EffectsModule.forFeature(effects),
   ],
   providers: [...fromServices.services],
-  declarations: [...fromContainers.conatiners, ...fromComponents.components],
-  exports: [...fromContainers.conatiners, ...fromComponents.components],
+  declarations: [...fromContainers.containers, ...fromComponents.components],
+  exports: [...fromContainers.containers, ...fromComponents.components],
 })
 export class DocumentsModule {}

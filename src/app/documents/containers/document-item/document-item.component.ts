@@ -16,6 +16,8 @@ export class DocumentItemComponent implements OnInit {
   order$: Observable<Order>;
   orderlines$: Observable<OrderLine[]>;
 
+  visualise: Order;
+
   constructor(private store: Store<fromStore.DocumentsState>) {}
 
   ngOnInit() {
@@ -24,5 +26,19 @@ export class DocumentItemComponent implements OnInit {
     this.order$ = this.store.select(fromStore.getSelectedOrder);
 
     this.orderlines$ = this.store.select(fromStore.getAllOrderlines);
+  }
+
+  onSelect(event: number[]) {
+    console.log('onselect:::', event);
+  }
+
+  onCreate(event: Order) {}
+
+  onUpdate(event: Order) {}
+
+  onRemove(event: Order) {
+    const remove = window.confirm('Are you sure?');
+    if (remove) {
+    }
   }
 }

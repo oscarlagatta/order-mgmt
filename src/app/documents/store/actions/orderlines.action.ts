@@ -20,9 +20,12 @@ import { OrderLine } from '../../models/order-line.model';
  *      In this case we are lazy loading the Documents module and
  *      every action will be namespaced with [Documents]
  */
+// orderlines
 export const LOAD_ORDERLINES = '[Documents] Load Order Lines';
 export const LOAD_ORDERLINES_FAIL = '[Documents] Load Order Lines Fail';
 export const LOAD_ORDERLINES_SUCCESS = '[Documents] Load Order Lines Success';
+
+export const VISUALISE_ORDERLINES = '[Documents] Visualise Order Lines';
 
 export class LoadOrderlines implements Action {
   readonly type = LOAD_ORDERLINES;
@@ -44,8 +47,14 @@ export class LoadOrderlinesSuccess implements Action {
   constructor(public payload: OrderLine[]) {}
 }
 
+export class VisualiseOrderlines implements Action {
+  readonly type = VISUALISE_ORDERLINES;
+  constructor(public payload: number[]) {}
+}
+
 // action types
 export type OrderlinesActions =
   | LoadOrderlines
   | LoadOrderlinesFail
-  | LoadOrderlinesSuccess;
+  | LoadOrderlinesSuccess
+  | VisualiseOrderlines;
