@@ -9,6 +9,6 @@
   (remove)="onRemove($event)">
   
   <order-display
-    [order]="visualise"
+    [order]="visualise$ | async"
   ></order-display>
 </app-order-form>
